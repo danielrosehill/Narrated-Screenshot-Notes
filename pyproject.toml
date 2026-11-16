@@ -1,0 +1,18 @@
+[project]
+name = "scnotes"
+version = "1.0"
+description = "Narrated screen recording through OBS with screenshots grabbed on a hotkey, turned into a transcript with each screenshot placed where it was taken. For handing spoken notes to an AI model."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = ["obsws-python>=1.7", "requests>=2.31", "PySide6>=6.6"]
+
+[project.scripts]
+scnotes = "scnotes.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/scnotes"]
